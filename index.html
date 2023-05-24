@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Compress Videos</title>
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+			}
+
+			.container {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+			}
+
+			.container > * {
+				margin: 10px 0;
+			}
+
+			#file {
+				position: absolute;
+				opacity: 0;
+				width: 0;
+				height: 0;
+			}
+
+			#file-label {
+				background-color: #4CAF50;
+				color: white;
+				padding: 10px 20px;
+				border-radius: 4px;
+				cursor: pointer;
+			}
+
+			#file-label:hover {
+				background-color: #3e8e59;
+			}
+
+			#progress {
+				display: none;
+			}
+
+			#preview {
+				display: none;
+				margin-top: 10px;
+				max-width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+
+	<div class="container">
+		<label id="file-label" for="file">Select a video file</label>
+		<input id="file" name="file" type="file" accept="video/*">
+		<div id="progress">
+
+		</div>
+		<video id="preview" controls></video>
+	</div>
+
+	<script type="module" src="./src/main.js"></script>
+	</body>
+</html>
