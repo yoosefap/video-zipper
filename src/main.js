@@ -4,6 +4,10 @@ import CircularProgressBar from "circular-progress-bar";
 let compressor = new VideoZipper({
     quality: 'low',
 });
+compressor.load().then(()=>{
+    console.log('loaded');
+    document.getElementById('loading').style.display = 'none'
+});
 
 let progressElement = document.getElementById('progress');
 let downloadElement = document.getElementById('download');

@@ -6,6 +6,8 @@
 
 Videos need to be compressed before uploading to websites and various platforms to increase their loading and playback speed. In this regard, the `video-zipper` library has been developed in JavaScript, which allows you to compress your videos on the client side using WebAssembly technology and prepare them for upload.
 
+[Demo](https://demo.pinoox.com/video-zipper/)
+
 ## Installation
 
 To install this library, you can use the following command:
@@ -24,6 +26,11 @@ import VideoZipper from 'video-zipper';
 
 const compressor = new VideoZipper({
     quality: 'medium',
+});
+
+// load compressor
+compressor.load().then(()=>{
+    console.log('loaded');
 });
 
 // get the progress of the compression process

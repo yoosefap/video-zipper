@@ -24,7 +24,7 @@ export default class VideoZipper {
         veryLow: {name: 'Very Low', mp4: 34, webm: 38}
     };
 
-    constructor(options = {}) {
+    constructor(options = {},load = false) {
         // Assign options values to private properties
         this.#quality = options.quality || 'medium';
         this.#crf = options.crf || null;
@@ -37,6 +37,8 @@ export default class VideoZipper {
 
         // Create an instance of FFmpeg and load it
         this.#ffmpeg = createFFmpeg({log: true, progress: (p) => this.#callProgress(p.ratio)});
+
+        if(!!load)
         this.load();
     }
 
