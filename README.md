@@ -22,7 +22,9 @@ To use this library, simply create an instance of the `VideoCompressor` class an
 ```javascript
 import VideoZipper from 'video-zipper';
 
-const compressor = new VideoZipper();
+const compressor = new VideoZipper({
+    quality: 'medium',
+});
 
 // get the progress of the compression process
 compressor.progress((percent) => {
