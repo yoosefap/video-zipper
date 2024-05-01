@@ -10,7 +10,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "deploy": "vite build && gh-pages -d dist -b /video-zipper/"
+    "deploy": "vite build && gh-pages -d dist"
   },
   "keywords": [
     "video",
