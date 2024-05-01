@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>Video Zipper</title>
+	<style>
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+		}
+
+		.container > * {
+			margin: 10px 0;
+		}
+
+		#file {
+			position: absolute;
+			opacity: 0;
+			width: 0;
+			height: 0;
+		}
+
+		.btn {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		.btn:hover {
+			background-color: #3e8e59;
+		}
+
+
+		#progress,#download {
+			display: none;
+		}
+
+		#preview {
+			display: none;
+			margin-top: 10px;
+			max-width: 100%;
+		}
+
+		.blur-loading {
+			position: fixed;
+			left: 0;
+			right: 0;
+			z-index: 99999999;
+			display: flex;
+			width: 100%;
+			height: 100%;
+			backdrop-filter: blur(3px);
+			-webkit-transition-duration: 1s;
+			transition-duration: 1s;
+			background: rgba(255, 255, 255, 0.3);
+			align-items: center;
+			justify-content: center;
+		}
+
+		.spinner {
+			margin: 60px auto;
+			font-size: 5px;
+			position: relative;
+			text-indent: -9999em;
+			border-top: 1.1em solid #46f698;
+			border-right: 1.1em solid #1dee7f;
+			border-bottom: 1.1em solid #10e774;
+			border-left: 1.1em solid #0df57b;
+			-webkit-transform: translateZ(0);
+			-ms-transform: translateZ(0);
+			transform: translateZ(0);
+			-webkit-animation: load8 1.1s infinite linear;
+			animation: load8 1.1s infinite linear;
+		}
+
+		.spinner, .spinner:after {
+			border-radius: 50%;
+			width: 10em;
+			height: 10em;
+		}
+
+		@-webkit-keyframes load8 {
+			0% {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+			}
+			100% {
+				-webkit-transform: rotate(360deg);
+				transform: rotate(360deg);
+			}
+		}
+
+		@keyframes load8 {
+			0% {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+			}
+			100% {
+				-webkit-transform: rotate(360deg);
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+  <script type="module" crossorigin src="./assets/index.97490590.js"></script>
+  <link rel="stylesheet" href="./assets/index.bebe76fb.css">
+</head>
+<body>
+
+<div id="loading" class="blur-loading">
+	<div class="spinner"></div>
+</div>
+
+<div class="container">
+	<label id="file-label" class="btn" for="file">Select a video file</label>
+	<input id="file" name="file" type="file" accept="video/*">
+	<div id="progress">
+
+	</div>
+	<video id="preview" controls></video>
+
+	<button id="download" class="btn">Download Video</button>
+</div>
+
+
+</body>
+</html>
